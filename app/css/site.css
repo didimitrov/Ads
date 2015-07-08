@@ -5,6 +5,11 @@ html{
 body {
 
     }
+
+ul li {
+    list-style-type: none;
+}
+
 #app-footer {
     clear: both;
     /*background-color: ;*/

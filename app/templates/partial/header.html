@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse" ng-if="authService.isAnonymous()">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#/">Ads</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="#/login">Login</a></li>
+        <li><a href="#/register">Register</a></li>
+    </ul>
+</nav>
+
+<!-- Navigation box for logged in normal users (not admins) -->
+<nav class="navbar navbar-inverse" ng-if="authService.isNormalUser()">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#/">Ads</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="#/login">Login</a></li>
+        <li><a href="#/register">Register</a></li>
+        <li><a href="#/user/ads">My Ads</a></li>
+        <li><a href="#/user/ads/publish">Publish New Ad</a></li>
+        <li><a href="#/user/profile">Edit Profile</a></li>
+        <li><a class="pull-right" ng-click="logout()">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- Navigation box for logged in admins -->
+<nav class="navbar navbar-inverse" ng-if="authService.isAdmin()">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#/">Ads</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="#/admin/ads">Ads</a></li>
+        <li><a href="#/admin/users">Users</a></li>
+        <li><a href="#/admin/categories">Categories</a></li>
+        <li><a href="#/admin/towns">Towns</a></li>
+        <li><a class="pull-right" ng-click="logout()">Logout</a></li>
+    </ul>
+</nav>

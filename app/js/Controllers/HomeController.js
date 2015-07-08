@@ -14,7 +14,7 @@ app.controller('HomeController',function($scope,notifyService,adsService,pageSiz
             function error(err){
             notifyService.showError("Cannot load ads", err)
         })
-    }
+    };
 
     $scope.reloadAds();
 });
