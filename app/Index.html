@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-inverse" ng-if="authService.isAnonymous()">
     <div class="navbar-header">
-        <a class="navbar-brand" href="/">Ads</a>
+        <a class="navbar-brand" href="#/">Ads</a>
     </div>
     <ul class="nav navbar-nav">
         <li><a href="#/login">Login</a></li>
@@ -33,7 +33,7 @@
         <!--<div ng-include="'templates/partial/left-sidebar.html'"></div>-->
     <!--</div>-->
 
-    <div class='col-md-10' ng-view>
+    <div class='col-md-9 col-md-offset-1' ng-view>
     </div>
 
     <div class='col-md-2 sidebar' ng-controller="RightSidebarController">
