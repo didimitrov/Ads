@@ -1,0 +1,19 @@
+html{
+
+}
+
+body {
+
+    }
+#app-footer {
+    clear: both;
+    /*background-color: ;*/
+    /*border: darkgray 1px solid;*/
+    text-align: center;
+    padding: 5px;
+    font-size: 12pt;
+    font-weight: normal;
+    color: darkslategray;
+    text-shadow: rgba(255, 255, 255, 0.5) 0.3px 0.3px 1px;
+    margin: 5px;
+}
