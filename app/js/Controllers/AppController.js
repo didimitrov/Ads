@@ -5,7 +5,7 @@ app.controller('AppController',function($scope,$location,authService,notifyServi
 
     $scope.logout=function(){
         authService.logout();
-        notifyService.showInfo('Loggout successful');
+        notifyService.showInfo('Logout successful');
         $location.path('/');
     }
 });

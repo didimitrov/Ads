@@ -7,10 +7,12 @@ app.controller('RegisterController',
         $scope.towns=townsService.getTowns();
 
         $scope.register = function(userData){
-            authService.register(userData, function success(){
+            authService.register(userData,
+                function success(){
                 notifyService.showInfo('User registered successfully');
                 $location.path('/');
-            },function error(err){
+            },
+                function error(err){
                 notifyService.showError('User registration failed',err)
             });
         }

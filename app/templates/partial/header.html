@@ -20,6 +20,12 @@
         <li><a href="#/user/profile">Edit Profile</a></li>
         <li><a class="pull-right" ng-click="logout()">Logout</a></li>
     </ul>
+
+    <div ng-if="authService.isLoggedIn()" class="user-area pull-right">
+        <span class="label label-default">{{authService.getCurrentUser().username}}</span>
+        <a ng-click="logout()" class="link label label-info">(Logout)</a>
+    </div>
+
 </nav>
 
 <!-- Navigation box for logged in admins -->
