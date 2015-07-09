@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 app.factory('authService', function($http, baseServiceUrl){
     return{
@@ -41,18 +41,18 @@ app.factory('authService', function($http, baseServiceUrl){
             return sessionStorage['currentUser'] == undefined;
         },
 
-        isLOgedIn: function(){
+        isLoggedIn: function(){
             return sessionStorage['currentUser']!= undefined;
         },
 
         isNormalUser: function(){
             var user = this.getCurrentUser();
-            return (user != undefined) &&(!user.isAdmin())
+            return (user != undefined) &&(!user.isAdmin)
         },
 
         isAdmin: function(){
             var user = this.getCurrentUser();
-            return (user !=undefined)&&(user.isAdmin())
+            return (user !=undefined)&&(user.isAdmin)
         },
 
         getAuthHeaders : function() {
