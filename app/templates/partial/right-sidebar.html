@@ -1,9 +1,38 @@
-<div class="row">
-    <h2 class="label label-default">Categories</h2>
-    <ul class="sidebar-menu" ng-repeat="c in authService">
+
+<div class="sidebar-menu " style="border: 1px solid darkred">
+    <h2 class="text-center">Categories</h2>
+    <ul class="sidebar-menu" >
+
+        <li class="special"
+            ng-class="{'selected' : selectedCategoryId == null}"
+            ng-click="categoryClicked(null)">
+           <i>All</i>
+        </li>
+
+        <li  ng-repeat="c in categories"
+             ng-click="categoryClicked(c.id)"
+             ng-class="{'selected': selectedCategoryId==c.id}">
+            {{c.name}}
+        </li>
 
     </ul>
 </div>
-<div class="row">
-    <h2 class="label label-default">Towns</h2>
+
+<div class="sidebar-menu " style="border: 1px solid darkred">
+    <h2 class="text-center">Towns</h2>
+    <ul class="sidebar-menu" >
+
+        <li class="special"
+            ng-class="{'selected' : selectedTownId == null}"
+            ng-click="townClicked(null)">
+            <i>All</i>
+        </li>
+
+        <li  ng-repeat="t in towns"
+             ng-click="townClicked(t.id)"
+             ng-class="{'selected': selectedTownId==t.id}">
+            {{t.name}}
+        </li>
+
+    </ul>
 </div>

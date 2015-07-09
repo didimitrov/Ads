@@ -8,8 +8,27 @@ body {
 
 ul li {
     list-style-type: none;
-}
 
+}
+ul.sidebar-menu li {
+    list-style-type: none;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0);
+    padding: 2px;
+    color: #1c381c;
+
+}
+.sidebar-menu li a, ul.sidebar-menu li a:focus {
+    outline: none;
+    display: block;
+    text-decoration: none;
+    color: darkgrey;
+}
+.selected {
+    background:  blanchedalmond;
+    border: 1px solid #682209;
+
+}
 #app-footer {
     clear: both;
     /*background-color: ;*/
