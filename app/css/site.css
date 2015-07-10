@@ -13,9 +13,8 @@ ul li {
 ul.sidebar-menu li {
     list-style-type: none;
     cursor: pointer;
-
-
 }
+
 /*.sidebar-menu li a, ul.sidebar-menu li a:focus {*/
     /*outline: none;*/
     /*display:block;*/
