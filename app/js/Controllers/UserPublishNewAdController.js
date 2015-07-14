@@ -9,7 +9,8 @@ app.controller('UserPublishNewAdController',
         $scope.adData = {townId:null, categoryId: null};
 
         $scope.publishAd = function(adData){
-            userService.createNewAd(adData,
+            userService.createNewAd(
+                adData,
                 function success(){
                 notifyService.showInfo('Create is successful.');
                     $location.path('/user/ads');

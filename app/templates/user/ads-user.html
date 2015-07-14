@@ -29,11 +29,11 @@
                     <div class="well text-center">{{ ad.status}}</div>
                     <button class="btn btn-block btn-lg btn-danger"
                             ng-if="ad.status != 'Inactive' && ad.status != 'Rejected'"
-                            ng-click="deactivateAd(ad.id)">Deactivate
+                            ng-click="deactivateUserAd(ad.id)">Deactivate
                     </button>
                     <div ng-if="ad.status == 'Inactive' || ad.status == 'Rejected'">
                         <a href="#/user/editAd/{{ ad.id }}" class="btn btn-block btn-lg btn-primary">Edit</a>
-                        <button class="btn btn-block btn-lg btn-primary" ng-click="publishAgainAd(ad)">Publish again
+                        <button class="btn btn-block btn-lg btn-primary" ng-click="publishAgainAd(ad.id)">Publish again
                         </button>
                         <a href="#/user/deleteAd/{{ ad.id }}" class="btn btn-block btn-lg btn-danger">Delete</a>
                     </div>
@@ -44,6 +44,6 @@
 </li>
 </ul>
 <div class="text-center">
-    <pagination total-items="adsInfo.numItems" ng-model="parameters.startPage" items-per-page="parameters.pageSize"
+    <pagination total-items="ads.numItems" ng-model="parameters.startPage" items-per-page="parameters.pageSize"
                 ng-change="reloadUserAds()" max-size="9" boundary-links="true"></pagination>
 </div>
