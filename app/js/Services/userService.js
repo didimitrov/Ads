@@ -13,7 +13,7 @@ app.factory('userService', function($http, baseServiceUrl, authService){
             $http(request).success(success).error(error)
         },
 
-        getUseAds: function(params, success, error){
+        getUserAds: function (params, success, error) {
             var request = {
                 method: 'GET',
                 url: baseServiceUrl+'/api/user/ads',
@@ -35,7 +35,16 @@ app.factory('userService', function($http, baseServiceUrl, authService){
         publishAgainAd: function(id, success, error){
             var request = {
                 method:'PUT',
-                url: baseServiceUrl+'/api/user/ads/deactivate'+id,
+                url: baseServiceUrl + '/api/user/ads/publishagain' + id,
+                headers: authService.getAuthHeaders()
+            };
+            $http(request).success(success).error(error)
+        },
+
+        getUserProfile: function (success, error) {
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + '/api/user/profile',
                 headers: authService.getAuthHeaders()
             };
             $http(request).success(success).error(error)

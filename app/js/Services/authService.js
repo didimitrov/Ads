@@ -10,8 +10,8 @@ app.factory('authService', function($http, baseServiceUrl){
             };
             $http(request).success(function(data){
                 sessionStorage['currentUser']=JSON.stringify(data);
-                success(data).error(error)
-            })
+                success(data);
+            }).error(error)
         },
 
         register: function(userData, success, error){
@@ -22,8 +22,8 @@ app.factory('authService', function($http, baseServiceUrl){
             };
             $http(request).success(function(data){
                 sessionStorage['currentUser']=JSON.stringify(data);
-                success(data).error(error);
-            })
+                success(data);
+            }).error(error);
         },
 
         logout: function(){

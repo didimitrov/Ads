@@ -17,5 +17,28 @@ app.controller('UserPublishNewAdController',
             function error(){
                 notifyService.showError('Create failed.')
             })
-        }
+        };
+
+        $scope.fileSelected = function (fileInputField, edit) {
+            var file = fileInputField.files[0];
+            if (file.type.match(/image\/.*/)) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    if (edit) {
+                        $scope.adData.changeImage = true;
+                        $scope.editAd.imageDataUrl = reader.result;
+                    }
+                    else {
+                        $scope.adData.imageDataUrl = reader.result;
+                    }
+
+                    $scope.$apply();
+                    $(".image-box").html("<img src='" + reader.result + "'>");
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                $(".image-box").html("<p>File type not supported!</p>");
+            }
+        };
 });
