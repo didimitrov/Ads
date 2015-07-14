@@ -11,9 +11,15 @@ ul li {
 
 }
 
+.selectBoxSize {
+    width: 200px;
+    margin-top: 5px;
+}
+
 div a:hover {
     color: #772953;
 }
+
 ul.sidebar-menu li {
     list-style-type: none;
     cursor: pointer;

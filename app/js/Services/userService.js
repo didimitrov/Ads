@@ -22,6 +22,15 @@ app.factory('userService', function($http, baseServiceUrl, authService){
             };
             $http(request).success(success).error(error)
         },
+
+        getUserAdById: function (id, success, error) {
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + '/api/user/ads/' + id,
+                headers: authService.getAuthHeaders()
+            };
+            $http(request).success(success).error(error);
+        },
         
         deactivateAd: function(id, success, error){
             var request = {
@@ -58,6 +67,55 @@ app.factory('userService', function($http, baseServiceUrl, authService){
                 data: data
             };
             $http(request).success(success).error(error)
+        },
+
+        changeUserPassword: function (data, success, error) {
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + '/api/user/changePassword',
+                headers: authService.getAuthHeaders(),
+                data: data
+            };
+            $http(request).success(success).error(error);
+        },
+
+        deleteUserAd: function (id, success, error) {
+            var request = {
+                method: 'DELETE',
+                url: baseServiceUrl + '/api/user/ads/' + id,
+                headers: authService.getAuthHeaders()
+            };
+            $http(request).success(success).error(error);
+        },
+
+        editUserAd: function (data, success, error) {
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + '/api/user/ads/' + data.id,
+                headers: authService.getAuthHeaders(),
+                data: JSON.stringify(data)
+            };
+            $http(request).success(success).error(error);
+        },
+
+        deleteAdImages: function (data, success, error) {
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + '/api/user/ads/' + data.id,
+                headers: authService.getAuthHeaders(),
+                data: JSON.stringify(data)
+            };
+            $http(request).success(success).error(error);
+        },
+
+        changeAdImages: function (data, success, error) {
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + '/api/user/ads/' + data.id,
+                headers: authService.getAuthHeaders(),
+                data: JSON.stringify(data)
+            };
+            $http(request).success(success).error(error);
         }
     }
 });

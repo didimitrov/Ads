@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('UserAdsController',
-    function ($scope, $location, userService, adsService, notifyService, pageSize) {
+    function ($scope, $location, $timeout, userService, adsService, notifyService, pageSize) {
 
         $scope.adsParams = {
             'startPage': 1,
@@ -37,7 +37,9 @@ app.controller('UserAdsController',
                 function success() {
                     notifyService.showInfo('Successfully published again ad')
                     $scope.reloadUserAds();
-                    $location.path('/user/ads')
+                    $timeout(function () {
+                        $location.path("/user/ads");
+                    }, 5000);
                 },
                 function error() {
                     notifyService.showError('Cannot publish again ad', error)
