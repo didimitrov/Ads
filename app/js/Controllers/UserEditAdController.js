@@ -13,25 +13,24 @@ app.controller('UserEditAdController',
         $scope.editUserAds = function (adData) {
             userService.editUserAd(
                 adData,
-                function success(data) {
+                function success() {
                     notifyService.showInfo('Successfully edited ad');
                     $location.path("/user/ads");
                 },
-                function error(err) {
+                function error() {
                     notifyService.showError('Cannot edit ad');
                 }
             )
         };
 
-
         $scope.getUserAdById = function (id) {
             userService.editUserAd(
                 id,
-                function success(data) {
+                function success() {
                     notifyService.showInfo('Successfully edited ad');
                     $location.path("/user/ads");
                 },
-                function error(err) {
+                function error() {
                     notifyService.showError('Cannot edit ad');
                 }
             )
@@ -42,7 +41,7 @@ app.controller('UserEditAdController',
             adData.changeImage = true;
             userService.deleteAdImages(
                 adData,
-                function success(data) {
+                function success() {
                     notifyService.showInfo('Successfully deleted image');
                     $location.path("/user/ads/edit/" + adData.id);
                 },
@@ -56,7 +55,7 @@ app.controller('UserEditAdController',
             adData.changeImage = true;
             userService.changeAdImages(
                 adData,
-                function success(data) {
+                function success() {
                     notifyService.showInfo('Successfully changed image');
                     $location.path("/user/ads/edit/" + adData.id);
                 },
@@ -80,6 +79,5 @@ app.controller('UserEditAdController',
                 $(".image-box").html("<p>File type not supported!</p>");
             }
         };
-
 
     });

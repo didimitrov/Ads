@@ -1,0 +1,29 @@
+<div class="row"></div>
+<div class="well col-md-8 col-md-offset-2">
+    <h2>Confirm Deleting Ad?</h2>
+
+    <h1>{{adData.title}}</h1>
+
+    <div><strong>Date:</strong> {{adData.date | date:'dd-MMM-yyyy'}}</div>
+    <div ng-if="adData.imageDataUrl">
+        <strong>Image: </strong>
+        <img class="ad-image" ng-src="{{adData.imageDataUrl}}" alt=""/>
+    </div>
+    <div>
+        <strong>Text: </strong>
+        {{adData.text}}
+    </div>
+    <div ng-if="adData.categoryName">
+        <strong>Category: </strong>
+        {{adData.categoryName}}
+    </div>
+    <div ng-if="adData.townName">
+        <strong>Town: </strong>
+        {{adData.townName}}
+    </div>
+
+    <div>
+        <a class="btn btn-danger" href="" ng-click="deleteUserAd(adData.id)">Delete</a>
+        <a class="btn-default" href="#/users/ads">Cancel</a>
+    </div>
+</div>

@@ -1,6 +1,7 @@
-<form class="form-horizontal" name="userEditAdForm">
+<div class="">
+    <div class="form-horizontal" name="userEditAdForm">
     <legend>Edit Ad</legend>
-    <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2 well">
         <div class="col-md-7 pull-left">
             <div>
                 <label for="title" class="">Title:</label>
@@ -12,42 +13,52 @@
                      class="form-control input-sm chat-input"></textarea>
             </div>
         </div>
-        <div>
+            <div class="col-md-7 pull-left">
+                <div>
 
-            <label for="category" class=" control-label">Category:</label>
-            <select id="category" ng-model="adData.categoryId" class="form-control selectBoxSize">
-                <option value="null">(None)</option>
-                <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
-            </select>
+                    <label for="category" class=" control-label">Category:</label>
+                    <select id="category" ng-model="adData.categoryId" class="form-control selectBoxSize">
+                        <option value="null">(None)</option>
+                        <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
+                    </select>
+                </div>
         </div>
-        <div>
 
-            <label for="town" class=" control-label">Town:</label>
-            <select id="town" ng-model="adData.townId" class="form-control selectBoxSize">
-                <option value="null">(None)</option>
-                <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
-            </select>
+            <div class="col-md-7 pull-left">
+                <div>
+                    <label for="town" class=" control-label">Town:</label>
+                    <select id="town" ng-model="adData.townId" class="form-control selectBoxSize">
+                        <option value="null">(None)</option>
+                        <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
+                    </select>
+                </div>
         </div>
-        <div>
-            <label for="image" class=" control-label">Image:</label>
-            <input ng-model="adData.imageUrl" type="file" id="image"
-                   onchange="angular.element(this).scope().fileSelected(this)" class="form-control selectBoxSize"/>
-            <br>
-            <img class="image-box imageMine" style="margin-left:175px;" ng-if="adData.imageDataUrl"
-                 ng-src="{{adData.imageDataUrl}}"/><br/>
-        </div>
-        <div>
 
-            <div class="image-box" ng-if="!adData.imageDataUrl">
+            <div class="col-md-7 pull-left">
+                <div>
+                    <label for="image" class=" control-label">Image:</label>
+                    <input ng-model="adData.imageUrl" type="file" id="image"
+                           onchange="angular.element(this).scope().fileSelected(this)"
+                           class="form-control selectBoxSize"/>
+                    <br>
+                    <img class="image-box imageMine" style="margin-left:175px;" ng-if="adData.imageDataUrl"
+                         ng-src="{{adData.imageDataUrl}}"/><br/>
+                </div>
+        </div>
+
+            <div>
+                <div class="col-md-4 pull-right image-box" ng-if="!adData.imageDataUrl">
             </div>
 
             <br/>
 
-            <a class="btn btn-danger" ng-click="deleteAdImage(adData)">Delete Image</a> |
-            <a class="btn btn-success" ng-click="changeAdImage(adData)">Change Image</a> |
-            <a ng-click="editUserAds(adData)" class="btn btn-info">Edit</a> |
-            <a href="#/user/ads" class="btn btn-default">Cancel</a> |
+                <div class="col-md-7 pull-left btn-group-sm">
+                    <a class="btn btn-danger " ng-click="deleteAdImage(adData)">Delete Image</a>
+                    <a class="btn btn-success" ng-click="changeAdImage(adData)">Change Image</a>
+                    <a ng-click="editUserAds(adData)" class="btn btn-info">Edit</a>
+                    <a href="#/user/ads" class="btn btn-default">Cancel</a>
+                </div>
         </div>
     </div>
-</form>
-</form>
+    </div>
+    </form></div>
