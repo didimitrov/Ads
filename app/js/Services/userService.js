@@ -53,7 +53,7 @@ app.factory('userService', function($http, baseServiceUrl, authService){
         getUserProfile: function (success, error) {
             var request = {
                 method: 'GET',
-                url: baseServiceUrl + '/api/user/profile',
+                url: baseServiceUrl + '/api/user/profile/',
                 headers: authService.getAuthHeaders()
             };
             $http(request).success(success).error(error)

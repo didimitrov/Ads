@@ -3,7 +3,9 @@
         <h3>There are currently no ads here.</h3>
     </div>
 </div>
+<legend class="text-center">My ads</legend>
 <div class="row">
+    <ul>
 <li ng-repeat="ad in ads.ads" class="list-unstyled">
 
     <div class="panel panel-default col-md-9 col-md-offset-2">
@@ -43,9 +45,14 @@
         </div>
     </div>
 </li>
+    </ul>
 </div>
-</ul>
+
 <div class="text-center">
-    <pagination total-items="ads.numItems" ng-model="parameters.startPage" items-per-page="parameters.pageSize"
-                ng-change="reloadUserAds()" max-size="9" boundary-links="true"></pagination>
+    <pagination total-items="ads.numItems"
+                ng-model="adsParams.startPage"
+                items-per-page="adsParams.pageSize"
+                ng-change="reloadUserAds()" max-size="9" boundary-links="true">
+
+    </pagination>
 </div>

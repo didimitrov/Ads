@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
 var app =angular.module('app',['ngRoute', 'ngResource','ui.bootstrap.pagination']);
 
 app.constant('baseServiceUrl','http://softuni-ads.azurewebsites.net');
-app.constant('pageSize', 2);
+app.constant('pageSize', 3);
 
 app.config(function($routeProvider){
     $routeProvider.when('/',{
@@ -41,12 +41,17 @@ app.config(function($routeProvider){
         controller: 'UserDeleteAdController'
     });
 
+    $routeProvider.when('/user/profile', {
+        templateUrl: 'templates/user/profile.html',
+        controller: 'UserProfileController'
+    });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });
 
     app.run(function ($rootScope, $location, authService) {
-        $rootScope.$on('$locationChangeStart', function (event) {
+        $rootScope.$on('$locationChangeStart', function () {
             if ($location.path().indexOf("/user/") != -1 && !authService.isLoggedIn()) {
                 // Authorization check: anonymous site visitors cannot access user routes
                 $location.path("/");
