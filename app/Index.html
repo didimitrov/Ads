@@ -5,7 +5,6 @@
 <head>
     <!-- Load CSS files -->
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <!--<link rel="stylesheet" href="css/app.css" />-->
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
     <meta charset="utf-8">
@@ -18,12 +17,12 @@
     <div ng-include="'templates/partial/header.html'"></div>
 </header>
 
-<div id='app-content' class="row">
+<div id='app-content' class="">
     <!--<div class='col-md-2 sidebar'>-->
         <!--<div ng-include="'templates/partial/left-sidebar.html'"></div>-->
     <!--</div>-->
 
-    <div class='col-md-9' ng-view>
+    <div class='col-md-10' ng-view>
     </div>
 
     <div class='col-md-2 sidebar ' ng-controller="RightSidebarController">

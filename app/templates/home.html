@@ -1,32 +1,67 @@
 <legend class="text-center">All ads</legend>
-<div class="col-md-offset-3 ">
+<div class="row">
+    <div class="text-center">
     <pagination total-items="ads.numItems" ng-model="adsParams.startPage"
                 items-per-page="adsParams.pageSize" ng-change="reloadAds()"
                 max-size="9" boundary-links="true">
     </pagination>
 </div>
-
-
-<ul>
-    <li ng-repeat="ad in ads.ads" data-id="{{ad.id}}">
-        <div class="well">
-            <div class="row" ng-if='ad.imageDataUrl'>
-                <div class="col-xs-6 col-md-3">
-                    <a href="" class="thumbnail">
-                        <img ng-src="{{ad.imageDataUrl}}" alt="..." class="item-image">
-                    </a>
+    <div class="col-md-12">
+        <ul>
+            <li ng-repeat="ad in ads.ads" class="list-unstyled">
+                <div class="col col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>
+                                <strong>{{ ad.title }}</strong>
+                                <span class="pull-right">{{ ad.date |  date:'dd-MMM-yyyy' }}</span>
+                            </h4>
                 </div>
-                <h2>{{ad.title}}</h2>
-
-                <div>Date: {{ad.date | date:'dd-MMM-yyyy'}}</div>
-                <div><strong>Text:</strong> {{ad.text}}</div>
-                <div><strong>Name:</strong> {{ad.ownerName}}</div>
-                <div><strong>Email:</strong> {{ad.ownerEmail}}</div>
-                <div><strong>Phone:</strong> {{ad.ownerPhone}}</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                    <img src="" alt="{{ ad.title }}" ng-src="{{ ad.imageDataUrl }}" class="item-image"/>
+                                </div>
+                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                    <div class="well">{{ ad.text }}</div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Name: {{ ad.ownerName }}</li>
+                                        <li class="list-group-item">Email: <a href="mailto://{{ ad.ownerEmail }}">{{
+                                            ad.ownerEmail }}</a></li>
+                                        <li class="list-group-item">Tel.: {{ ad.ownerPhone }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
             </div>
-        </div>
-    </li>
-</ul>
-<div ng-if="ads.ads.length==0" class="box no-data">
-    No ads found.
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
+
+
+<!--<ul>-->
+<!--<li ng-repeat="ad in ads.ads" data-id="{{ad.id}}">-->
+<!--<div class="well">-->
+<!--<div class="row" ng-if='ad.imageDataUrl'>-->
+<!--<div class="col-xs-6 col-md-3">-->
+<!--<a href="" class="thumbnail">-->
+<!--<img ng-src="{{ad.imageDataUrl}}" alt="..." class="item-image">-->
+<!--</a>-->
+<!--</div>-->
+<!--<h2>{{ad.title}}</h2>-->
+
+<!--<div>Date: {{ad.date | date:'dd-MMM-yyyy'}}</div>-->
+<!--<div><strong>Text:</strong> {{ad.text}}</div>-->
+<!--<div><strong>Name:</strong> {{ad.ownerName}}</div>-->
+<!--<div><strong>Email:</strong> {{ad.ownerEmail}}</div>-->
+<!--<div><strong>Phone:</strong> {{ad.ownerPhone}}</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div ng-if="ads.ads.length==0" class="box no-data">-->
+<!--No ads found.-->
+<!--</div>-->
+

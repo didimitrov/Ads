@@ -4,11 +4,19 @@
     </div>
 </div>
 <legend class="text-center">My ads</legend>
+<div class="text-center">
+    <pagination total-items="ads.numItems"
+                ng-model="adsParams.startPage"
+                items-per-page="adsParams.pageSize"
+                ng-change="reloadUserAds()" max-size="9" boundary-links="true">
+
+    </pagination>
+</div>
 <div class="row">
     <ul>
 <li ng-repeat="ad in ads.ads" class="list-unstyled">
-
-    <div class="panel panel-default col-md-9 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default text-center">
         <div class="panel-heading">
             <h3>
                 <strong>{{ ad.title }}</strong>
@@ -44,15 +52,8 @@
             </div>
         </div>
     </div>
+    </div>
 </li>
     </ul>
 </div>
 
-<div class="text-center">
-    <pagination total-items="ads.numItems"
-                ng-model="adsParams.startPage"
-                items-per-page="adsParams.pageSize"
-                ng-change="reloadUserAds()" max-size="9" boundary-links="true">
-
-    </pagination>
-</div>
